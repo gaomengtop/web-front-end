@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <style type='text/css'>
+    .item{
+        width:100px;
+        height:100px;
+        background-color: orange;
+        border-radius: 10%;
+    }
+    .fourth{
+        display: flex;
+        flex-wrap: wrap;
+        /*不加不会显示column的效果  */
+        align-content: space-around;
+        /* 多行才使用content */
+    }
+    .column{
+        display: flex;
+        flex-basis: 100%;
+        /* 优先级大于width 受max-width min-width影响 */
+        /* 当容器没有足够大的空间来存放所有的items，flex items会按照压缩率(shrink rate)被压缩 */
+        /* 如果将每个item设置flex-grow：1 所有的item都会等比例的增长来填充剩余的空间 */
+        justify-content: space-around;
+
+    }
+    .point{
+        width: 20px;
+        height: 20px;
+        background-color: black;
+        margin: 5px;
+    }
+    </style>
+</head>
+<body>
+    <div class='item fourth'>
+        <div class='column'>
+            <span class='point'></span>
+            <span class='point'></span>
+        </div>
+        <div class='column'>
+            <span class='point'></span>
+            <span class='point'></span>
+        </div>
+    </div>
+</body>
+</html>
